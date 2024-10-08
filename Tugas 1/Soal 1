@@ -1,53 +1,23 @@
-
 #include <iostream>
 using namespace std;
 
-
-const int HARGA_NETFLIX = 39000;
-const int HARGA_DISNEY_PLUS = 45000;
-const int HARGA_HBO_GO = 40000;
-
-void rekomendasiLayananStreaming(int dana) {
-    cout << "Rekomendasi layanan streaming untuk dana Rp. " << dana << ":\n";
-
-    if (dana >= HARGA_NETFLIX + HARGA_DISNEY_PLUS + HARGA_HBO_GO) {
-        cout << "- Netflix, Disney+, dan HBO GO\n";
-    }   
-    if (dana >= HARGA_DISNEY_PLUS + HARGA_HBO_GO) {
-        cout << "- Disney+ dan HBO GO\n";
-    }
-    if (dana >= HARGA_NETFLIX + HARGA_DISNEY_PLUS) {
-        cout << "- Netflix dan Disney+\n";
-    }
-    if (dana >= HARGA_NETFLIX + HARGA_HBO_GO) {
-        cout << "- Netflix dan HBO GO\n";
-    }
-
-        if (dana < HARGA_NETFLIX + HARGA_HBO_GO) {  
-
-        if (dana >= HARGA_DISNEY_PLUS) {
-            cout << "- Disney+\n";
-        }
-        if (dana >= HARGA_HBO_GO) {
-            cout << "- HBO GO\n";
-        }
-        if (dana >= HARGA_NETFLIX) {
-            cout << "- Netflix\n";
-        }
-    }
-
-    if (dana < HARGA_NETFLIX && dana < HARGA_HBO_GO && dana < HARGA_DISNEY_PLUS) {
-        cout << "Maaf, dana Anda tidak cukup untuk berlangganan layanan streaming apa pun.\n";
-    }
-}
-
 int main() {
-    int dana;
-    cout << "Masukkan dana yang Anda miliki: Rp. ";
-    cin >> dana;
+    //variabel dari SBM
+    int anggaran = 88000000; //anggaran yang diberikan
+    int hari = 20;
+    int harga_sewa_perhari = 1103000; //SBM RP 1.103.000
 
-    cout << endl;
-    rekomendasiLayananStreaming(dana);
+    //menghitung total anggaran maksimum
+    int anggaran_maksimum = hari * harga_sewa_perhari;
+
+    //kondisi if
+    if (anggaran <= anggaran_maksimum) {
+        cout << "Anggaran dapat diterima." << endl;
+    
+    } 
+    else {
+        cout << "Anggaran tidak dapat diterima." << endl;
+    }
 
     return 0;
 }
